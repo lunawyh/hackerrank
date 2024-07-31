@@ -1,0 +1,14 @@
+import itertools
+
+#get input. the input will be a list of integers ex: 1222311
+inp = input()
+
+#use the groupby function. list1 = <itertools.groupby object at 0x7fa700867a60>
+list1 = (itertools.groupby(inp))
+
+#list3 =  [['1'], ['2', '2', '2'], ['3'], ['1', '1']]
+list3 = [list(y) for x, y in list1]
+
+for i in list3:
+    print(tuple([len(i), int(i[0])]), end = " ")
+# output = (1, 1) (3, 2) (1, 3) (2, 1)
